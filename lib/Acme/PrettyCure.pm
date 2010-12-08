@@ -1,80 +1,53 @@
 package Acme::PrettyCure;
 use Any::Moose;
-use 5.10.0;
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
-use feature 'switch';
 use UNIVERSAL::require;
 
-sub members {
-    my ($class, $team) = @_;
-    $team ||= 'First';
+my %SERIES = (
+    First      => [qw/ CureBlack CureWhite /],
+    MaxHeart   => [qw/ CureBlackMH CureWhiteMH ShinyLuminous /],
+    SplashStar => [qw/ CureBloom CureEgret /],
+    Five       => [qw/ CureDream CureRouge CureLemonade CureMint CureAqua /],
+    Fresh      => [qw/ CurePeach CureBerry CurePine CurePassion /],
+    HeartCatch => [qw/ CureBlossom CureMarine CureSunshine CureMoonlight /],
+);
 
-    given ($team) {
-        when ('AllStar') {
-            return $class->_get(
-                qw(CureBlack CureWhite ShinyLuminous 
-                   CureBloom CureEgret 
-                   CureDream CureRouge CureLemonade CureMint CureAqua MilkyRose 
-                   CurePeach CureBerry CurePine CurePassion 
-                   CureBlossom CureMarine CureSunshine CureMoonlight)
-            );
-        }
-        when ('AllStarDX1') {
-            return $class->_get(
-                qw(CureBlack CureWhite ShinyLuminous 
-                   CureBloom CureEgret 
-                   CureDream CureRouge CureLemonade CureMint CureAqua MilkyRose 
-                   CurePeach CureBerry CurePine)
-            );
-        }
-        when ('AllStarDX2') {
-            return $class->_get(
-                qw(CureBlack CureWhite ShinyLuminous 
-                   CureBloom CureEgret 
-                   CureDream CureRouge CureLemonade CureMint CureAqua MilkyRose 
-                   CurePeach CureBerry CurePine CurePassion 
-                   CureBlossom CureMarine)
-            );
-        }
-        when ('First') {
-            return $class->_get(qw(CureBlack CureWhite));
-        }
-        when ('MaxHeart') {
-            return $class->_get(qw(CureBlack CureWhite ShinyLuminous));
-        }
-        when ('SplashStar') {
-            return $class->_get(qw(CureBloom CureEgret));
-        }
-        when ('Five') {
-            return $class->_get(
-                qw(CureDream CureRouge CureLemonade CureMint CureAqua));
-        }
-        when ('FiveGoGo') {
-            return $class->_get(
-                qw(CureDream CureRouge CureLemonade CureMint CureAqua MilkyRose)
-            );
-        }
-        when ('Fresh') {
-            return $class->_get(qw(CurePeach CureBerry CurePine CurePassion));
-        }
-        when ('HeartCatch') {
-            return $class->_get(qw(CureBlossom CureMarine CureSunshine CureMoonlight));
-        }
-        default {
-            die "can't find $team at pretty cure";
-        }
-    }
+$SERIES{FiveGoGo} = [ @{ $SERIES{Five} },  'MilkyRose' ];
+
+$SERIES{AllStar} = [
+    @{ $SERIES{MaxHeart} }, @{ $SERIES{SplashStar} }, @{ $SERIES{FiveGoGo} },
+    @{ $SERIES{Fresh} }, @{ $SERIES{HeartCatch} }
+];
+$SERIES{AllStarDX1} = [
+    @{ $SERIES{MaxHeart} }, @{ $SERIES{SplashStar} }, @{ $SERIES{FiveGoGo} },
+    qw/ CurePeach CureBerry CurePine /
+];
+$SERIES{AllStarDX2} = [
+    @{ $SERIES{MaxHeart} }, @{ $SERIES{SplashStar} }, @{ $SERIES{FiveGoGo} },
+    @{ $SERIES{Fresh} },
+    qw/ CureBlossom CureMarine /
+];
+
+sub girls {
+    $_[0]->_get(@{ 
+        $SERIES{$_[1] || 'First'} or die q{can't find $team at pretty cure}
+    });
 }
 
-sub now { shift->members('HeartCatch') }
+sub members { girls(@_) }
+
+sub all_series{ keys %SERIES }
+sub tv_series{ grep { !/^All/ } keys %SERIES }
+
+sub now { shift->girls('HeartCatch') }
 
 sub _get {
     my ($class, @names) = @_;
 
     my @girls;
     for my $name (@names) {
-        my $module = "Acme::PrettyCure::$name";
+        my $module = "Acme::PrettyCure::Girl::$name";
         $module->require or die $@;
 
         push @girls, $module->new;
@@ -99,13 +72,13 @@ Acme::PrettyCure - All about Japanese battle heroine "Pretty Cure"
   use Acme::PrettyCure;
 
   # retrieve member on their teams
-  my @allstar =  Acme::PrettyCure->members('AllStar');    # retrieve all
-  my @allstar1 = Acme::PrettyCure->members('AllStarDX1'); # retrieve first .. fresh
-  my @allstar2 = Acme::PrettyCure->members('AllStarDX2'); # retrieve first .. heart_catch
-  my @first    = Acme::PrettyCure->members;
-  my @mh       = Acme::PrettyCure->members('MaxHeart');
-  my @ss       = Acme::PrettyCure->members('SplashStar');
-  my @five     = Acme::PrettyCure->members('Five');
+  my @allstar =  Acme::PrettyCure->girls('AllStar');    # retrieve all
+  my @allstar1 = Acme::PrettyCure->girls('AllStarDX1'); # retrieve first .. fresh
+  my @allstar2 = Acme::PrettyCure->girls('AllStarDX2'); # retrieve first .. heart_catch
+  my @first    = Acme::PrettyCure->girls;
+  my @mh       = Acme::PrettyCure->girls('MaxHeart');
+  my @ss       = Acme::PrettyCure->girls('SplashStar');
+  my @five     = Acme::PrettyCure->girls('Five');
 
   my $hc = Acme::PrettyCure->now; # retrieve active team members
 
@@ -119,13 +92,32 @@ http://en.wikipedia.org/wiki/Pretty_Cure
 
 =head2 members
 
-  my @precures = Acme::PrettyCure->members('AllStar');
+  my @precures = Acme::PrettyCure->girls('AllStar');
 
-returns Acme::PrettyCure::Girl based objects.
+returns C<Acme::PrettyCure::Girl::Role> act objects.
+
+=head2 members
+
+  alias of girls.
+
+=head2 tv_series
+
+  my @tv_series_names = Acme::PrettyCure->tv_series;
+
+=head2 all_series
+
+tv series with all movies.
+
+  my @all_series_names = Acme::PrettyCure->all_series;
+
+=head2 now
+
+  returns team girls when now on air.
 
 =head1 AUTHOR
 
 Kan Fushihara E<lt>kan.fushihara at gmail.comE<gt>
+Kazuhiro Osawa E<lt>ko@yappo.ne.jp<gt>
 
 =head1 SEE ALSO
 
