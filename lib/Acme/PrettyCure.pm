@@ -1,6 +1,6 @@
 package Acme::PrettyCure;
 use Any::Moose;
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 use UNIVERSAL::require;
 
@@ -11,13 +11,14 @@ my %SERIES = (
     Five       => [qw/ CureDream CureRouge CureLemonade CureMint CureAqua /],
     Fresh      => [qw/ CurePeach CureBerry CurePine CurePassion /],
     HeartCatch => [qw/ CureBlossom CureMarine CureSunshine CureMoonlight /],
+    Suite      => [qw/ CureMelody CureRhythm CureBeat CureMuse /],
 );
 
 $SERIES{FiveGoGo} = [ @{ $SERIES{Five} },  'MilkyRose' ];
 
 $SERIES{AllStar} = [
     @{ $SERIES{MaxHeart} }, @{ $SERIES{SplashStar} }, @{ $SERIES{FiveGoGo} },
-    @{ $SERIES{Fresh} }, @{ $SERIES{HeartCatch} }
+    @{ $SERIES{Fresh} }, @{ $SERIES{HeartCatch} }, @{ $SERIES{Suite} },
 ];
 $SERIES{AllStarDX1} = [
     @{ $SERIES{MaxHeart} }, @{ $SERIES{SplashStar} }, @{ $SERIES{FiveGoGo} },
@@ -28,6 +29,12 @@ $SERIES{AllStarDX2} = [
     @{ $SERIES{Fresh} },
     qw/ CureBlossom CureMarine /
 ];
+$SERIES{AllStarDX3} = [
+    @{ $SERIES{MaxHeart} }, @{ $SERIES{SplashStar} }, @{ $SERIES{FiveGoGo} },
+    @{ $SERIES{Fresh} }, @{ $SERIES{HeartCatch} },
+    qw/ CureMelody CureRhythm /
+];
+
 
 sub girls {
     $_[0]->_get(@{ 
@@ -40,7 +47,7 @@ sub members { girls(@_) }
 sub all_series{ keys %SERIES }
 sub tv_series{ grep { !/^All/ } keys %SERIES }
 
-sub now { shift->girls('HeartCatch') }
+sub now { shift->girls('Suite') }
 
 sub _get {
     my ($class, @names) = @_;
