@@ -15,6 +15,7 @@ inc/Test/More.pm
 lib/Acme/PrettyCure.pm
 lib/Acme/PrettyCure/Girl/CureAqua.pm
 lib/Acme/PrettyCure/Girl/CureBeat.pm
+lib/Acme/PrettyCure/Girl/CureBeauty.pm
 lib/Acme/PrettyCure/Girl/CureBerry.pm
 lib/Acme/PrettyCure/Girl/CureBlack.pm
 lib/Acme/PrettyCure/Girl/CureBlackMH.pm
@@ -22,19 +23,24 @@ lib/Acme/PrettyCure/Girl/CureBloom.pm
 lib/Acme/PrettyCure/Girl/CureBlossom.pm
 lib/Acme/PrettyCure/Girl/CureBright.pm
 lib/Acme/PrettyCure/Girl/CureDream.pm
+lib/Acme/PrettyCure/Girl/CureEcho.pm
 lib/Acme/PrettyCure/Girl/CureEgret.pm
 lib/Acme/PrettyCure/Girl/CureFlower.pm
+lib/Acme/PrettyCure/Girl/CureHappy.pm
 lib/Acme/PrettyCure/Girl/CureLemonade.pm
+lib/Acme/PrettyCure/Girl/CureMarch.pm
 lib/Acme/PrettyCure/Girl/CureMarine.pm
 lib/Acme/PrettyCure/Girl/CureMelody.pm
 lib/Acme/PrettyCure/Girl/CureMint.pm
 lib/Acme/PrettyCure/Girl/CureMoonlight.pm
 lib/Acme/PrettyCure/Girl/CureMuse.pm
 lib/Acme/PrettyCure/Girl/CurePassion.pm
+lib/Acme/PrettyCure/Girl/CurePeace.pm
 lib/Acme/PrettyCure/Girl/CurePeach.pm
 lib/Acme/PrettyCure/Girl/CurePine.pm
 lib/Acme/PrettyCure/Girl/CureRhythm.pm
 lib/Acme/PrettyCure/Girl/CureRouge.pm
+lib/Acme/PrettyCure/Girl/CureSunny.pm
 lib/Acme/PrettyCure/Girl/CureSunshine.pm
 lib/Acme/PrettyCure/Girl/CureWhite.pm
 lib/Acme/PrettyCure/Girl/CureWhiteMH.pm
@@ -45,6 +51,7 @@ lib/Acme/PrettyCure/Girl/Role/Five.pm
 lib/Acme/PrettyCure/Girl/Role/Fresh.pm
 lib/Acme/PrettyCure/Girl/Role/Futari.pm
 lib/Acme/PrettyCure/Girl/Role/HeartCatch.pm
+lib/Acme/PrettyCure/Girl/Role/Smile.pm
 lib/Acme/PrettyCure/Girl/Role/Suite.pm
 lib/Acme/PrettyCure/Girl/ShinyLuminous.pm
 Makefile.PL
@@ -55,6 +62,7 @@ t/00_compile.t
 t/01_transform.t
 t/10_all_series.t
 t/10_allstar.t
+t/10_echo.t
 t/10_first.t
 t/10_five.t
 t/10_fivegogo.t
@@ -63,6 +71,7 @@ t/10_fresh.t
 t/10_heartcatch.t
 t/10_maxheart.t
 t/10_now.t
+t/10_smile.t
 t/10_splasstar.t
 t/10_suite.t
 t/10_tv_series.t
