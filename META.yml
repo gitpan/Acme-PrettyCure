@@ -22,9 +22,10 @@ no_index:
 requires:
   Any::Moose: 0
   List::MoreUtils: 0
+  Math::Random::MT: 0
   Time::Piece: 0
   UNIVERSAL::require: 0
 resources:
   license: http://dev.perl.org/licenses/
   repository: git://github.com/kan/p5-acme-prettycure.git
-version: 0.05
+version: 0.06

@@ -71,6 +71,7 @@ t/10_fresh.t
 t/10_heartcatch.t
 t/10_maxheart.t
 t/10_now.t
+t/10_peace.t
 t/10_smile.t
 t/10_splasstar.t
 t/10_suite.t
