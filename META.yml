@@ -28,4 +28,4 @@ requires:
 resources:
   license: http://dev.perl.org/licenses/
   repository: git://github.com/kan/p5-acme-prettycure.git
-version: 0.06
+version: 0.07
