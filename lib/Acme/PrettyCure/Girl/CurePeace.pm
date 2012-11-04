@@ -14,7 +14,7 @@ has janken_db => (
             qw(0 0 チョキ パー グー チョキ チョキ グー チョキ パー グー パー
               チョキ グー パー グー パー チョキ チョキ パー グー パー チョキ
               パー チョキ パー パー グー チョキ グー パー 0 グー パー チョキ
-              グー)
+              グー パー)
         ];
     },
 );
@@ -35,6 +35,7 @@ sub challenge_with_jankenpon {
     return $words;
 }
 sub color { 226 }
+sub image_url { 'http://www.toei-anim.co.jp/tv/precure/images/character/c3_1.jpg' }
 
 
 no Any::Moose;

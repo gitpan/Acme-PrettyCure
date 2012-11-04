@@ -3,8 +3,14 @@ use utf8;
 use Any::Moose '::Role';
 
 use Encode;
+use Furl;
+use Cache::LRU;
+use Net::DNS::Lite;
+use Imager;
 
-requires qw(human_name precure_name challenge);
+$Net::DNS::Lite::CACHE = Cache::LRU->new(size => 256);
+
+requires qw(human_name precure_name challenge image_url);
 
 has 'is_precure' => (is => 'rw', isa => 'Bool', default => sub { 0 });
 
@@ -38,6 +44,35 @@ sub transform {
     $self->say($_) for $self->challenge;
 
     return $self;
+}
+
+sub image {
+    my $self = shift;
+
+    my $furl = Furl::HTTP->new(
+        agent     => 'Acme-PrettyCure',
+        inet_aton => \&Net::DNS::Lite::inet_aton,
+        timeout   => 60,
+    );
+    my ( $minor_version, $status, $message, $headers, $content ) =
+      $furl->request( method => 'GET', url => $self->image_url, );
+
+    my $img = Imager->new();
+    my $type;
+    if ($self->image_url =~ /\.gif$/) {
+        $type = 'gif';
+    }
+    elsif ($self->image_url =~ /\.png$/) {
+        $type = 'png';
+    }
+    elsif ($self->image_url =~ /\.jpe?g$/) {
+        $type = 'jpeg';
+    }
+    $img->read(data => $content, type => $type) or die $img->errstr;
+
+    open my $ah, '|-', qw/aview -reverse -driver curses/ or die "aview:$!";
+    $img->write( fh => $ah, type => 'pnm' ) or die $img->errstr;
+    close($ah);
 }
 
 1;
