@@ -1,17 +1,5 @@
+Build.PL
 Changes
-inc/Module/Install.pm
-inc/Module/Install/AuthorTests.pm
-inc/Module/Install/Base.pm
-inc/Module/Install/Can.pm
-inc/Module/Install/Fetch.pm
-inc/Module/Install/Include.pm
-inc/Module/Install/Makefile.pm
-inc/Module/Install/Metadata.pm
-inc/Module/Install/Repository.pm
-inc/Module/Install/Win32.pm
-inc/Module/Install/WriteAll.pm
-inc/Test/Exception.pm
-inc/Test/More.pm
 lib/Acme/PrettyCure.pm
 lib/Acme/PrettyCure/Girl/CureAqua.pm
 lib/Acme/PrettyCure/Girl/CureBeat.pm
@@ -54,8 +42,9 @@ lib/Acme/PrettyCure/Girl/Role/HeartCatch.pm
 lib/Acme/PrettyCure/Girl/Role/Smile.pm
 lib/Acme/PrettyCure/Girl/Role/Suite.pm
 lib/Acme/PrettyCure/Girl/ShinyLuminous.pm
-Makefile.PL
+LICENSE
 MANIFEST			This list of files
+META.json
 META.yml
 README
 t/00_compile.t
@@ -77,6 +66,7 @@ t/10_splasstar.t
 t/10_suite.t
 t/10_tv_series.t
 t/Utils.pm
+TODO
 xt/01_podspell.t
 xt/02_perlcritic.t
 xt/03_pod.t
