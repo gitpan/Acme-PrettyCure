@@ -1,6 +1,6 @@
 package Acme::PrettyCure;
-use Any::Moose;
-our $VERSION = '0.092';
+use Moo;
+our $VERSION = '0.1';
 
 use UNIVERSAL::require;
 
@@ -13,6 +13,7 @@ my %SERIES = (
     HeartCatch => [qw/ CureBlossom CureMarine CureSunshine CureMoonlight /],
     Suite      => [qw/ CureMelody CureRhythm CureBeat CureMuse /],
     Smile      => [qw/ CureHappy CureSunny CurePeace CureMarch CureBeauty /],
+    DokiDoki   => [qw/ CureHeart CureSword /],
 );
 
 $SERIES{FiveGoGo} = [ @{ $SERIES{Five} },  'MilkyRose' ];
@@ -41,6 +42,11 @@ $SERIES{AllStarNewStage} = [
     @{ $SERIES{Fresh} }, @{ $SERIES{HeartCatch} }, @{ $SERIES{Suite} },
     @{ $SERIES{Smile} },
     qw/ CureEcho /
+];
+$SERIES{AllStarNewStage2} = [
+    @{ $SERIES{MaxHeart} }, @{ $SERIES{SplashStar} }, @{ $SERIES{FiveGoGo} },
+    @{ $SERIES{Fresh} }, @{ $SERIES{HeartCatch} }, @{ $SERIES{Suite} },
+    @{ $SERIES{Smile} }, @{ $SERIES{DokiDoki} },
 ];
 
 
@@ -77,6 +83,10 @@ sub allstar {
     my @smile = $class->_get(@{$SERIES{Smile}});
     my $miyuki = shift @smile;
     $miyuki->transform(@smile);
+
+    my @dokidoki = $class->_get(@{$SERIES{DokiDoki}});
+    my $mana = shift @dokidoki;
+    $mana->transform(@dokidoki);
 }
 
 sub girls {
@@ -90,7 +100,7 @@ sub members { girls(@_) }
 sub all_series{ keys %SERIES }
 sub tv_series{ grep { !/^All/ } keys %SERIES }
 
-sub now { shift->girls('Smile') }
+sub now { shift->girls('DokiDoki') }
 
 sub _get {
     my ($class, @names) = @_;
@@ -106,9 +116,6 @@ sub _get {
     return @girls;
 }
 
-
-no Any::Moose;
-__PACKAGE__->meta->make_immutable;
 
 1;
 __END__

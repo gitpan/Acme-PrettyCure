@@ -15,6 +15,7 @@ lib/Acme/PrettyCure/Girl/CureEcho.pm
 lib/Acme/PrettyCure/Girl/CureEgret.pm
 lib/Acme/PrettyCure/Girl/CureFlower.pm
 lib/Acme/PrettyCure/Girl/CureHappy.pm
+lib/Acme/PrettyCure/Girl/CureHeart.pm
 lib/Acme/PrettyCure/Girl/CureLemonade.pm
 lib/Acme/PrettyCure/Girl/CureMarch.pm
 lib/Acme/PrettyCure/Girl/CureMarine.pm
@@ -30,11 +31,13 @@ lib/Acme/PrettyCure/Girl/CureRhythm.pm
 lib/Acme/PrettyCure/Girl/CureRouge.pm
 lib/Acme/PrettyCure/Girl/CureSunny.pm
 lib/Acme/PrettyCure/Girl/CureSunshine.pm
+lib/Acme/PrettyCure/Girl/CureSword.pm
 lib/Acme/PrettyCure/Girl/CureWhite.pm
 lib/Acme/PrettyCure/Girl/CureWhiteMH.pm
 lib/Acme/PrettyCure/Girl/CureWindy.pm
 lib/Acme/PrettyCure/Girl/MilkyRose.pm
 lib/Acme/PrettyCure/Girl/Role.pm
+lib/Acme/PrettyCure/Girl/Role/DokiDoki.pm
 lib/Acme/PrettyCure/Girl/Role/Five.pm
 lib/Acme/PrettyCure/Girl/Role/Fresh.pm
 lib/Acme/PrettyCure/Girl/Role/Futari.pm
@@ -51,6 +54,7 @@ t/00_compile.t
 t/01_transform.t
 t/10_all_series.t
 t/10_allstar.t
+t/10_dokidoki.t
 t/10_echo.t
 t/10_first.t
 t/10_five.t

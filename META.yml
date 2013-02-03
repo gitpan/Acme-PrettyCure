@@ -21,7 +21,7 @@ no_index:
 provides:
   Acme::PrettyCure:
     file: lib/Acme/PrettyCure.pm
-    version: 0.092
+    version: 0.1
   Acme::PrettyCure::Girl::CureAqua:
     file: lib/Acme/PrettyCure/Girl/CureAqua.pm
     version: 0
@@ -63,6 +63,9 @@ provides:
     version: 0
   Acme::PrettyCure::Girl::CureHappy:
     file: lib/Acme/PrettyCure/Girl/CureHappy.pm
+    version: 0
+  Acme::PrettyCure::Girl::CureHeart:
+    file: lib/Acme/PrettyCure/Girl/CureHeart.pm
     version: 0
   Acme::PrettyCure::Girl::CureLemonade:
     file: lib/Acme/PrettyCure/Girl/CureLemonade.pm
@@ -109,6 +112,9 @@ provides:
   Acme::PrettyCure::Girl::CureSunshine:
     file: lib/Acme/PrettyCure/Girl/CureSunshine.pm
     version: 0
+  Acme::PrettyCure::Girl::CureSword:
+    file: lib/Acme/PrettyCure/Girl/CureSword.pm
+    version: 0
   Acme::PrettyCure::Girl::CureWhite:
     file: lib/Acme/PrettyCure/Girl/CureWhite.pm
     version: 0
@@ -123,6 +129,9 @@ provides:
     version: 0
   Acme::PrettyCure::Girl::Role:
     file: lib/Acme/PrettyCure/Girl/Role.pm
+    version: 0
+  Acme::PrettyCure::Girl::Role::DokiDoki:
+    file: lib/Acme/PrettyCure/Girl/Role/DokiDoki.pm
     version: 0
   Acme::PrettyCure::Girl::Role::Five:
     file: lib/Acme/PrettyCure/Girl/Role/Five.pm
@@ -146,16 +155,16 @@ provides:
     file: lib/Acme/PrettyCure/Girl/ShinyLuminous.pm
     version: 0
 requires:
-  Any::Moose: 0
   Cache::LRU: 0
   Furl: 0
   Imager: 0
   List::MoreUtils: 0
   Math::Random::MT: 0
+  Moo: 0
   Net::DNS::Lite: 0
   Time::Piece: 0
   UNIVERSAL::require: 0
   perl: 5.010001
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.092
+version: 0.1
