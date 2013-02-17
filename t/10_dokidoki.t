@@ -6,11 +6,11 @@ use t::Utils;
 
 use Acme::PrettyCure;
 
-my ($mana, $makoto) = Acme::PrettyCure->girls('DokiDoki');
+my ($mana, $rikka, $makoto) = Acme::PrettyCure->girls('DokiDoki');
 
 isa_ok $mana,   'Acme::PrettyCure::Girl::CureHeart';
 isa_ok $makoto, 'Acme::PrettyCure::Girl::CureSword';
-#isa_ok $rikka,  'Acme::PrettyCure::Girl::CureDiamond';
+isa_ok $rikka,  'Acme::PrettyCure::Girl::CureDiamond';
 #isa_ok $arisu,  'Acme::PrettyCure::Girl::CureRosetta';
 
 #is_output sub { $mana->transform($rikka, $arisu, $makoto); }, <<EOS, '変身時の台詞';

@@ -21,7 +21,7 @@ no_index:
 provides:
   Acme::PrettyCure:
     file: lib/Acme/PrettyCure.pm
-    version: 0.1
+    version: v0.1.1
   Acme::PrettyCure::Girl::CureAqua:
     file: lib/Acme/PrettyCure/Girl/CureAqua.pm
     version: 0
@@ -48,6 +48,9 @@ provides:
     version: 0
   Acme::PrettyCure::Girl::CureBright:
     file: lib/Acme/PrettyCure/Girl/CureBright.pm
+    version: 0
+  Acme::PrettyCure::Girl::CureDiamond:
+    file: lib/Acme/PrettyCure/Girl/CureDiamond.pm
     version: 0
   Acme::PrettyCure::Girl::CureDream:
     file: lib/Acme/PrettyCure/Girl/CureDream.pm
@@ -167,4 +170,4 @@ requires:
   perl: 5.010001
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.1
+version: v0.1.1

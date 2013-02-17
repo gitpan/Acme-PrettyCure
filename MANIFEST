@@ -10,6 +10,7 @@ lib/Acme/PrettyCure/Girl/CureBlackMH.pm
 lib/Acme/PrettyCure/Girl/CureBloom.pm
 lib/Acme/PrettyCure/Girl/CureBlossom.pm
 lib/Acme/PrettyCure/Girl/CureBright.pm
+lib/Acme/PrettyCure/Girl/CureDiamond.pm
 lib/Acme/PrettyCure/Girl/CureDream.pm
 lib/Acme/PrettyCure/Girl/CureEcho.pm
 lib/Acme/PrettyCure/Girl/CureEgret.pm
