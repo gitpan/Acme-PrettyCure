@@ -1,6 +1,6 @@
 package Acme::PrettyCure;
 use Moo;
-our $VERSION = '0.1.01';
+our $VERSION = '0.1.2';
 
 use UNIVERSAL::require;
 
@@ -13,7 +13,7 @@ my %SERIES = (
     HeartCatch => [qw/ CureBlossom CureMarine CureSunshine CureMoonlight /],
     Suite      => [qw/ CureMelody CureRhythm CureBeat CureMuse /],
     Smile      => [qw/ CureHappy CureSunny CurePeace CureMarch CureBeauty /],
-    DokiDoki   => [qw/ CureHeart CureDiamond CureSword /],
+    DokiDoki   => [qw/ CureHeart CureDiamond CureSword CureRosetta /],
 );
 
 $SERIES{FiveGoGo} = [ @{ $SERIES{Five} },  'MilkyRose' ];

@@ -29,6 +29,7 @@ lib/Acme/PrettyCure/Girl/CurePeace.pm
 lib/Acme/PrettyCure/Girl/CurePeach.pm
 lib/Acme/PrettyCure/Girl/CurePine.pm
 lib/Acme/PrettyCure/Girl/CureRhythm.pm
+lib/Acme/PrettyCure/Girl/CureRosetta.pm
 lib/Acme/PrettyCure/Girl/CureRouge.pm
 lib/Acme/PrettyCure/Girl/CureSunny.pm
 lib/Acme/PrettyCure/Girl/CureSunshine.pm

@@ -49,7 +49,7 @@
    "provides" : {
       "Acme::PrettyCure" : {
          "file" : "lib/Acme/PrettyCure.pm",
-         "version" : "v0.1.1"
+         "version" : "v0.1.2"
       },
       "Acme::PrettyCure::Girl::CureAqua" : {
          "file" : "lib/Acme/PrettyCure/Girl/CureAqua.pm",
@@ -163,6 +163,10 @@
          "file" : "lib/Acme/PrettyCure/Girl/CureRhythm.pm",
          "version" : 0
       },
+      "Acme::PrettyCure::Girl::CureRosetta" : {
+         "file" : "lib/Acme/PrettyCure/Girl/CureRosetta.pm",
+         "version" : 0
+      },
       "Acme::PrettyCure::Girl::CureRouge" : {
          "file" : "lib/Acme/PrettyCure/Girl/CureRouge.pm",
          "version" : 0
@@ -238,5 +242,5 @@
          "http://dev.perl.org/licenses/"
       ]
    },
-   "version" : "v0.1.1"
+   "version" : "v0.1.2"
 }
