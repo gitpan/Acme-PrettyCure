@@ -1,10 +1,7 @@
 Revision history for Perl extension Acme::PrettyCure
 
-0.1.2   Mon Feb 25 02:58:37 2013
-        - add CureRosetta
-
-0.1.1   Sun Feb 17 17:23:32 2013
-        - add CureDiamond
+0.1.1 2014-01-03T05:36:45Z
+        - add member of "DokiDoki Precure"
 
 0.1     Sun Feb 03 09:38:02 2013
         - add title "DokiDoki Precure"

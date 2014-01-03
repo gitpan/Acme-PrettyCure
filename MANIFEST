@@ -1,6 +1,12 @@
 Build.PL
 Changes
+LICENSE
+META.json
+README.md
+TODO
+cpanfile
 lib/Acme/PrettyCure.pm
+lib/Acme/PrettyCure/Girl/CureAce.pm
 lib/Acme/PrettyCure/Girl/CureAqua.pm
 lib/Acme/PrettyCure/Girl/CureBeat.pm
 lib/Acme/PrettyCure/Girl/CureBeauty.pm
@@ -47,11 +53,7 @@ lib/Acme/PrettyCure/Girl/Role/HeartCatch.pm
 lib/Acme/PrettyCure/Girl/Role/Smile.pm
 lib/Acme/PrettyCure/Girl/Role/Suite.pm
 lib/Acme/PrettyCure/Girl/ShinyLuminous.pm
-LICENSE
-MANIFEST			This list of files
-META.json
-META.yml
-README
+minil.toml
 t/00_compile.t
 t/01_transform.t
 t/10_all_series.t
@@ -72,8 +74,7 @@ t/10_splasstar.t
 t/10_suite.t
 t/10_tv_series.t
 t/Utils.pm
-TODO
-xt/01_podspell.t
 xt/02_perlcritic.t
-xt/03_pod.t
 xt/perlcriticrc
+META.yml
+MANIFEST

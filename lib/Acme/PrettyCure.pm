@@ -1,6 +1,7 @@
 package Acme::PrettyCure;
 use Moo;
-our $VERSION = '0.1.2';
+use 5.008005;
+our $VERSION = '0.1.1';
 
 use UNIVERSAL::require;
 
@@ -13,7 +14,7 @@ my %SERIES = (
     HeartCatch => [qw/ CureBlossom CureMarine CureSunshine CureMoonlight /],
     Suite      => [qw/ CureMelody CureRhythm CureBeat CureMuse /],
     Smile      => [qw/ CureHappy CureSunny CurePeace CureMarch CureBeauty /],
-    DokiDoki   => [qw/ CureHeart CureDiamond CureSword CureRosetta /],
+    DokiDoki   => [qw/ CureHeart CureDiamond CureRosetta CureSword CureAce /],
 );
 
 $SERIES{FiveGoGo} = [ @{ $SERIES{Five} },  'MilkyRose' ];
@@ -46,7 +47,8 @@ $SERIES{AllStarNewStage} = [
 $SERIES{AllStarNewStage2} = [
     @{ $SERIES{MaxHeart} }, @{ $SERIES{SplashStar} }, @{ $SERIES{FiveGoGo} },
     @{ $SERIES{Fresh} }, @{ $SERIES{HeartCatch} }, @{ $SERIES{Suite} },
-    @{ $SERIES{Smile} }, @{ $SERIES{DokiDoki} },
+    @{ $SERIES{Smile} },
+    qw/ CureHeart CureDiamond CureRosetta CureSword /,
 ];
 
 
@@ -141,7 +143,7 @@ Acme::PrettyCure - All about Japanese battle heroine "Pretty Cure"
 
 =head1 DESCRIPTION
 
-"Acme::PrettyCure" is most famous Japanese battle hiroine.
+"Acme::PrettyCure" is most famous Japanese battle heroine.
 
 http://en.wikipedia.org/wiki/Pretty_Cure
 
